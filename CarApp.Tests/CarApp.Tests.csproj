@@ -26,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CalculatorTests\CarApp.Core.csproj" />
     <ProjectReference Include="..\CarApp.Api\CarApp.Api.csproj" />
     <ProjectReference Include="..\CarApp.Application\CarApp.Application.csproj" />
+    <ProjectReference Include="..\CarApp.Core\CarApp.Core.csproj" />
   </ItemGroup>
 
 </Project>

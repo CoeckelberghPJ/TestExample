@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CalculatorTests\CarApp.Core.csproj" />
+    <ProjectReference Include="..\CarApp.Core\CarApp.Core.csproj" />
   </ItemGroup>
 
 </Project>
