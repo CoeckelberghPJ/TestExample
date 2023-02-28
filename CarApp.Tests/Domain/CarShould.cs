@@ -1,3 +1,4 @@
+using CarApp.Core.Domain;
 using CarApp.Tests.Builder;
 
 namespace CarApp.Tests.Domain;
@@ -8,7 +9,7 @@ public class CarShould
     private readonly string _brand;
     private readonly string _type;
     private readonly VinNumber _vinNumber;
-    private readonly Car _car;
+    private Car _car;
 
     public CarShould()
     {
@@ -38,6 +39,7 @@ public class CarShould
             car.IsMaxPowerEnabled.Should().BeFalse();
             car.IsHeatedSeatsEnabled.Should().BeFalse();
             car.TopSpeed.Should().Be(150);
+            car.IsSubscriptionActivated.Should().BeFalse();
         }
     }
 
@@ -89,6 +91,7 @@ public class CarShould
             _car.IsMaxPowerEnabled.Should().BeTrue();
             _car.IsHeatedSeatsEnabled.Should().BeTrue();
             _car.TopSpeed.Should().Be(180);
+            _car.IsSubscriptionActivated.Should().BeTrue();
         }
     }
 
@@ -109,6 +112,10 @@ public class CarShould
     public void DisableSubscription()
     {
         //Arrange
+        _car = CarBuilder.Default()
+            .WithSubscription()
+            .Build();
+
         //Act
         _car.DisableSubscription();
 
@@ -118,6 +125,7 @@ public class CarShould
             _car.IsMaxPowerEnabled.Should().BeFalse();
             _car.IsHeatedSeatsEnabled.Should().BeFalse();
             _car.TopSpeed.Should().Be(150);
+            _car.IsSubscriptionActivated.Should().BeFalse();
         }
     }
 
